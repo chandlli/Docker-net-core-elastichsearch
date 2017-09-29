@@ -1,0 +1,20 @@
+# SDK 2.0 image with necessary commands to build, restore, watch and run
+FROM microsoft/dotnet:2.0-sdk
+
+# for shared volumes with docker
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+
+# set environment
+ENV ASPNETCORE_ENVIRONMENT=Development
+
+# set work dir
+WORKDIR /server
+
+# copy all files to container
+COPY . /server
+
+# run restore command
+RUN dotnet restore
+
+# This command watch container folders and when occurs any change, restarts application.
+ENTRYPOINT ["dotnet", "watch", "run"]

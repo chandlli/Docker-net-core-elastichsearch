@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  product_api:
+    container_name: product_api
+    build:
+      context: ./src
+    volumes: 
+      - ./src/Controllers:/server/Controllers
+      - ./src/Models:/server/Models
+      - ./src/Repository:/server/Repository
+    ports: 
+      - "80:80"
+    links: 
+      - elasticsearch-repository
+
+  elasticsearch-repository:
+    image: elasticsearch:5
+    container_name: elasticsearch-repository
+    ports: 
+      - "9200:9200"
+      - "9300:9300"

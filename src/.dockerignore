@@ -1,0 +1,3 @@
+# ignore these folders. dotnet watch run command restore and build when changes occur
+bin\
+obj\
