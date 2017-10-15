@@ -1,5 +1,5 @@
 # Running Web Api .Net Core + Elasticsearch with Docker
-Simple web api example making request on elasticsearch running in docker.
+Simple web api example making request on elasticsearch running on docker.
 
 This example was built using .Net core SDK 2.0 on ubuntu 16.04
 
